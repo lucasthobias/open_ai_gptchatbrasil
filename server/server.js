@@ -42,9 +42,11 @@ app.post('/', async (req, res) => {
     });
 
   } catch (error) {
-    console.error(error)
+    // console.error(error)
     res.status(500).send(error || 'Something went wrong');
   }
 });
 
-app.listen(5000, () => console.log('AI server started on http://localhost:5000'));
+const port = process.env.PORT || 5001;
+
+app.listen(port, () => console.log('AI server started on http://localhost:5000'));
